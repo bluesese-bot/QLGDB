@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75D682F7-DF08-4FA4-AD66-4A63C02260D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLGDB</RootNamespace>
+    <AssemblyName>QLGDB</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\message.cs" />
+    <Compile Include="Controller\fr_Chondoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_Chondoi.Designer.cs">
+      <DependentUpon>fr_Chondoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_ChonTranDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_ChonTranDau.Designer.cs">
+      <DependentUpon>fr_ChonTranDau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_Dangkydoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_Dangkydoi.Designer.cs">
+      <DependentUpon>fr_Dangkydoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_LichThidau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_LichThidau.Designer.cs">
+      <DependentUpon>fr_LichThidau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_Main.Designer.cs">
+      <DependentUpon>fr_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_Quanly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_Quanly.Designer.cs">
+      <DependentUpon>fr_Quanly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_QuanLyGiai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_QuanLyGiai.Designer.cs">
+      <DependentUpon>fr_QuanLyGiai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_QuanLyThiDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_QuanLyThiDau.Designer.cs">
+      <DependentUpon>fr_QuanLyThiDau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_Themcauthu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_Themcauthu.Designer.cs">
+      <DependentUpon>fr_Themcauthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_Themgiaidau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_Themgiaidau.Designer.cs">
+      <DependentUpon>fr_Themgiaidau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_Trangchu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_Trangchu.Designer.cs">
+      <DependentUpon>fr_Trangchu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_TySo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_TySo.Designer.cs">
+      <DependentUpon>fr_TySo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Entity\CauThu.cs" />
+    <Compile Include="Model\Entity\DataModel.cs" />
+    <Compile Include="Model\Entity\DoiBong.cs" />
+    <Compile Include="Model\Entity\DoiBongCauThu.cs" />
+    <Compile Include="Model\Entity\GiaiDau.cs" />
+    <Compile Include="Model\Entity\KetQua.cs" />
+    <Compile Include="Model\Entity\sysdiagram.cs" />
+    <Compile Include="Model\GiaiDau\GiaiDauAddModel.cs" />
+    <Compile Include="Model\GiaiDau\GiaiDauQueryModel.cs" />
+    <Compile Include="Model\GiaiDau\GiaiDauUpdateModel.cs" />
+    <Compile Include="Model\GiaiDau\GiaiDauViewModel.cs" />
+    <Compile Include="Model\CauThu\CauThuViewModel.cs" />
+    <Compile Include="Model\DoiBongCauThu\DoiBongCauThuAddModel.cs" />
+    <Compile Include="Model\DoiBongCauThu\DoiBongCauThuQueryModel.cs" />
+    <Compile Include="Model\DoiBongCauThu\DoiBongCauThuUpdateModel.cs" />
+    <Compile Include="Model\DoiBongCauThu\DoiBongCauThuViewModel.cs" />
+    <Compile Include="Model\DoiBong\DoiBongAddModel.cs" />
+    <Compile Include="Model\DoiBong\DoiBongQueryModel.cs" />
+    <Compile Include="Model\DoiBong\DoiBongUpdateModel.cs" />
+    <Compile Include="Model\DoiBong\DoiBongViewModel.cs" />
+    <Compile Include="Model\CauThu\CauThuAddModel.cs" />
+    <Compile Include="Model\CauThu\CauThuQueryModel.cs" />
+    <Compile Include="Model\CauThu\CauThuUpdateModel.cs" />
+    <Compile Include="Model\Entity\LichThiDau.cs" />
+    <Compile Include="Model\LichThiDau\LichThiDauAddModel.cs" />
+    <Compile Include="Model\LichThiDau\LichThiDauQueryModel.cs" />
+    <Compile Include="Model\LichThiDau\LichThiDauUpdateModel.cs" />
+    <Compile Include="Model\LichThiDau\KetQuaViewModel.cs" />
+    <Compile Include="Model\LichThiDau\LichThiDauViewModel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\DoiBongCauThuService.cs" />
+    <Compile Include="Service\LichThiDauService.cs" />
+    <Compile Include="Service\GiaiDauService.cs" />
+    <Compile Include="Service\DoiBongService.cs" />
+    <Compile Include="Service\CauThuService.cs" />
+    <Compile Include="Controller\fr_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_Base.Designer.cs">
+      <DependentUpon>fr_Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controller\fr_Base.resx">
+      <DependentUpon>fr_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_Chondoi.resx">
+      <DependentUpon>fr_Chondoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_ChonTranDau.resx">
+      <DependentUpon>fr_ChonTranDau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_Dangkydoi.resx">
+      <DependentUpon>fr_Dangkydoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_LichThidau.resx">
+      <DependentUpon>fr_LichThidau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_Main.resx">
+      <DependentUpon>fr_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_Quanly.resx">
+      <DependentUpon>fr_Quanly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_QuanLyGiai.resx">
+      <DependentUpon>fr_QuanLyGiai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_QuanLyThiDau.resx">
+      <DependentUpon>fr_QuanLyThiDau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_Themcauthu.resx">
+      <DependentUpon>fr_Themcauthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_Themgiaidau.resx">
+      <DependentUpon>fr_Themgiaidau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_Trangchu.resx">
+      <DependentUpon>fr_Trangchu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_TySo.resx">
+      <DependentUpon>fr_TySo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataBase\100522.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

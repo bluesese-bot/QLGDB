@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pnMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnTrangChu = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnTrangChu = new System.Windows.Forms.Button();
+            this.pnMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,15 +53,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1460, 744);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // pnMain
-            // 
-            this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnMain.Location = new System.Drawing.Point(3, 102);
-            this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1454, 639);
-            this.pnMain.TabIndex = 1;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
@@ -80,19 +71,18 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1454, 93);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // btnTrangChu
+            // button3
             // 
-            this.btnTrangChu.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.btnTrangChu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrangChu.Location = new System.Drawing.Point(3, 3);
-            this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.Size = new System.Drawing.Size(478, 87);
-            this.btnTrangChu.TabIndex = 0;
-            this.btnTrangChu.Tag = "Trang Chủ";
-            this.btnTrangChu.Text = "Trang Chủ";
-            this.btnTrangChu.UseVisualStyleBackColor = false;
-            this.btnTrangChu.Click += new System.EventHandler(this.button1_Click);
+            this.button3.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(971, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(480, 87);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Lịch Thi Đấu";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -107,18 +97,28 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnTrangChu
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(971, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(480, 87);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Lịch Thi Đấu";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnTrangChu.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnTrangChu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrangChu.Location = new System.Drawing.Point(3, 3);
+            this.btnTrangChu.Name = "btnTrangChu";
+            this.btnTrangChu.Size = new System.Drawing.Size(478, 87);
+            this.btnTrangChu.TabIndex = 0;
+            this.btnTrangChu.Tag = "Trang Chủ";
+            this.btnTrangChu.Text = "Trang Chủ";
+            this.btnTrangChu.UseVisualStyleBackColor = false;
+            this.btnTrangChu.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pnMain
+            // 
+            this.pnMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnMain.Location = new System.Drawing.Point(3, 102);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(1454, 639);
+            this.pnMain.TabIndex = 1;
             // 
             // fr_Main
             // 
@@ -129,7 +129,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "fr_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fr_Main";
+            this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.fr_Main_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

@@ -103,6 +103,13 @@ namespace QLGDB.Service
             _contextService.SaveChanges();
             return true;
         }
+        public bool DeletebyIDdoi(int iddoi)
+        {
+            var LichThiDau = _contextService.LichThiDaus.Where(x => x.IdDoi2 == iddoi || x.IdDoi1 == iddoi).ToList();
+            _contextService.LichThiDaus.RemoveRange(LichThiDau);
+            _contextService.SaveChanges();
+            return true;
+        }
 
         public bool Edit(LichThiDauUpdateModel payload)
         {

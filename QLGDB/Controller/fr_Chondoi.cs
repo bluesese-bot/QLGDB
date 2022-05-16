@@ -12,7 +12,7 @@ namespace QLGDB.Controller
         private readonly GiaiDauService _serviceGD = new GiaiDauService();
         private readonly message message = new message();
 
-        public static string madoi = "";
+        public static string madoi = "0";
         public static string tendoi = "";
         public fr_Chondoi()
         {
@@ -56,10 +56,24 @@ namespace QLGDB.Controller
         }
         private void button_ok_Click(object sender, EventArgs e)
         {
-            madoi = txt_madoi.Text.Trim();
-            tendoi = txt_tendoi.Text.Trim();
-            this.Close();
-            Dispose();
+            try
+            {
+                if (!string.IsNullOrEmpty(txt_madoi.Text) && !string.IsNullOrEmpty(txt_tendoi.Text))
+                {
+                    madoi = txt_madoi.Text.Trim();
+                    tendoi = txt_tendoi.Text.Trim();
+                    this.Close();
+                    Dispose();
+                }
+                else
+                {
+                    message.MessageFalse();
+                }
+            }
+            catch (Exception)
+            {
+                message.Message();
+            }
         }
 
         private void button_huy_Click(object sender, EventArgs e)
@@ -79,7 +93,7 @@ namespace QLGDB.Controller
 
         private void cbGiai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbGiai.SelectedIndex > -1)
+            if (cbGiai.SelectedIndex > 0)
             {
                 LoadData((int)cbGiai.SelectedValue, null, null);
             }

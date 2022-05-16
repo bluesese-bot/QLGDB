@@ -75,11 +75,11 @@ namespace QLGDB.Controller
         }
         protected void UnlockText()
         {
-            txt_matrandau.Enabled = false;
-            txt_doi1.Enabled = false;
-            txt_doi2.Enabled = false;
-            txt_banthangdoi1.Enabled = false;
-            txt_banthangdoi2.Enabled = false;
+            txt_matrandau.Enabled = true;
+            txt_doi1.Enabled = true;
+            txt_doi2.Enabled = true;
+            txt_banthangdoi1.Enabled = true;
+            txt_banthangdoi2.Enabled = true;
 
             button_them.Enabled = false;
             button_sua.Enabled = false;
@@ -111,6 +111,7 @@ namespace QLGDB.Controller
             txt_matrandau.Text = fr_ChonTranDau.matrandau;
             _isEdit = fr_ChonTranDau.isStatus == true ? true : false;
             LoadData(null, null, null, null);
+            UnlockText();
         }
 
         private void button_sua_Click(object sender, EventArgs e)

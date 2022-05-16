@@ -10,6 +10,8 @@ namespace QLGDB.Controller
     {
         private readonly DoiBongService _service = new DoiBongService();
         private readonly GiaiDauService _serviceGD = new GiaiDauService();
+        private readonly DoiBongCauThuService _serviceDBCT = new DoiBongCauThuService();
+        private readonly LichThiDauService _thiDauService = new LichThiDauService();
         private readonly message message = new message();
         private bool _isAdd = false;
         private bool _isEdit = false;
@@ -20,6 +22,7 @@ namespace QLGDB.Controller
             LoadData(null,null,null);
             FilltextMuaGiai();
             LockText();
+            cbGiai.SelectedIndex = -1;
         }
         protected void FilltextMuaGiai()
         {
@@ -102,7 +105,6 @@ namespace QLGDB.Controller
         {
             _isAdd = true;
             UnlockText();
-            SetNull();
         }
 
         private void button_ok_Click(object sender, EventArgs e)
@@ -167,6 +169,8 @@ namespace QLGDB.Controller
         {
             try
             {
+                var resthiDau = _thiDauService.DeletebyIDdoi(Convert.ToInt32(txt_madoi.Text));
+                var resDBCT = _serviceDBCT.Delete(Convert.ToInt32(txt_madoi.Text));
                 var res = _service.Delete(Convert.ToInt32(txt_madoi.Text));
                 if (res == false)
                 {
@@ -181,7 +185,7 @@ namespace QLGDB.Controller
             {
                 LockText();
                 LoadData(null, null, null);
-            }
+                }
         }
 
         private void button_sua_Click(object sender, EventArgs e)

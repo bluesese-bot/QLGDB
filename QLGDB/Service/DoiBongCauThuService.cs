@@ -54,7 +54,13 @@ namespace QLGDB.Service
             _contextService.SaveChanges();
             return true;
         }
-
+        public bool Delete(int idDoiBong)
+        {
+            var DoiBongCauThu = _contextService.DoiBongCauThus.Where(x => x.IdDoi == idDoiBong).ToList();
+            _contextService.DoiBongCauThus.RemoveRange(DoiBongCauThu);
+            _contextService.SaveChanges();
+            return true;
+        }
         public bool Edit(DoiBongCauThuUpdateModel payload)
         {
             var DoiBongCauThu = _contextService.DoiBongCauThus.Find(payload.Id);

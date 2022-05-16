@@ -37,6 +37,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -51,19 +52,20 @@
             // lịchThiĐấuToolStripMenuItem
             // 
             this.lịchThiĐấuToolStripMenuItem.Name = "lịchThiĐấuToolStripMenuItem";
-            this.lịchThiĐấuToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.lịchThiĐấuToolStripMenuItem.Size = new System.Drawing.Size(123, 27);
             this.lịchThiĐấuToolStripMenuItem.Text = "Lịch Thi Đấu";
             this.lịchThiĐấuToolStripMenuItem.Click += new System.EventHandler(this.lịchThiĐấuToolStripMenuItem_Click);
             // 
             // tỷSốToolStripMenuItem
             // 
             this.tỷSốToolStripMenuItem.Name = "tỷSốToolStripMenuItem";
-            this.tỷSốToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.tỷSốToolStripMenuItem.Size = new System.Drawing.Size(68, 27);
             this.tỷSốToolStripMenuItem.Text = "Tỷ Số";
             this.tỷSốToolStripMenuItem.Click += new System.EventHandler(this.tỷSốToolStripMenuItem_Click);
             // 
             // pnMain
             // 
+            this.pnMain.BackColor = System.Drawing.Color.White;
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(0, 31);
             this.pnMain.Name = "pnMain";

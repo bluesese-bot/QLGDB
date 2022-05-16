@@ -84,7 +84,7 @@ namespace QLGDB.Controller
             fr_Chondoi chondoi = new fr_Chondoi();
             chondoi.ShowDialog();
             txt_tendoi.Text = fr_Chondoi.tendoi;
-            txt_madoi.Text = fr_Chondoi.madoi;
+            txt_madoi.Text = fr_Chondoi.madoi.ToString();
             LoadData(Convert.ToInt32(txt_madoi.Text));
         }
 

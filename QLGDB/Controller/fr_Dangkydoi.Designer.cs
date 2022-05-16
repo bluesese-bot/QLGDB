@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fr_Dangkydoi));
             this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.msds = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,20 +46,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbGiai = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txt_madoi = new System.Windows.Forms.TextBox();
-            this.msds = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
+            this.txt_madoi = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.msds)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.msds)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel5
@@ -87,6 +87,23 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Size = new System.Drawing.Size(1183, 527);
             this.tableLayoutPanel9.TabIndex = 0;
+            // 
+            // msds
+            // 
+            this.msds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.msds.BackgroundColor = System.Drawing.Color.White;
+            this.msds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msds.Location = new System.Drawing.Point(4, 267);
+            this.msds.Margin = new System.Windows.Forms.Padding(4);
+            this.msds.MultiSelect = false;
+            this.msds.Name = "msds";
+            this.msds.ReadOnly = true;
+            this.msds.RowHeadersWidth = 51;
+            this.msds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.msds.Size = new System.Drawing.Size(1175, 256);
+            this.msds.TabIndex = 0;
+            this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
             // 
             // groupBox1
             // 
@@ -282,7 +299,7 @@
             // 
             this.cbGiai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbGiai.FormattingEnabled = true;
-            this.cbGiai.Location = new System.Drawing.Point(969, 45);
+            this.cbGiai.Location = new System.Drawing.Point(969, 43);
             this.cbGiai.Margin = new System.Windows.Forms.Padding(4);
             this.cbGiai.Name = "cbGiai";
             this.cbGiai.Size = new System.Drawing.Size(186, 28);
@@ -300,6 +317,16 @@
             this.label8.TabIndex = 39;
             this.label8.Text = "Giải:";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.txt_madoi);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(187, 108);
+            this.panel1.TabIndex = 43;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -313,41 +340,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(187, 108);
             this.tableLayoutPanel1.TabIndex = 43;
             // 
-            // txt_madoi
-            // 
-            this.txt_madoi.Location = new System.Drawing.Point(3, 9);
-            this.txt_madoi.Name = "txt_madoi";
-            this.txt_madoi.Size = new System.Drawing.Size(100, 26);
-            this.txt_madoi.TabIndex = 7;
-            this.txt_madoi.Visible = false;
-            // 
-            // msds
-            // 
-            this.msds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.msds.BackgroundColor = System.Drawing.Color.White;
-            this.msds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msds.Location = new System.Drawing.Point(4, 267);
-            this.msds.Margin = new System.Windows.Forms.Padding(4);
-            this.msds.MultiSelect = false;
-            this.msds.Name = "msds";
-            this.msds.ReadOnly = true;
-            this.msds.RowHeadersWidth = 51;
-            this.msds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.msds.Size = new System.Drawing.Size(1175, 256);
-            this.msds.TabIndex = 0;
-            this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Controls.Add(this.txt_madoi);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 108);
-            this.panel1.TabIndex = 43;
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -360,6 +352,14 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Tên Đội:";
             // 
+            // txt_madoi
+            // 
+            this.txt_madoi.Location = new System.Drawing.Point(3, 9);
+            this.txt_madoi.Name = "txt_madoi";
+            this.txt_madoi.Size = new System.Drawing.Size(100, 26);
+            this.txt_madoi.TabIndex = 7;
+            this.txt_madoi.Visible = false;
+            // 
             // fr_Dangkydoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -368,19 +368,19 @@
             this.ClientSize = new System.Drawing.Size(1183, 527);
             this.Controls.Add(this.panel5);
             this.Name = "fr_Dangkydoi";
-            this.Text = "fr_Dangkydoi";
+            this.Text = "Đăng ký đội";
             this.panel5.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

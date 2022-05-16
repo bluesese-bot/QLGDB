@@ -30,6 +30,8 @@
         {
             this.msds = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.button_ok = new System.Windows.Forms.Button();
+            this.button_huy = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_matrandau = new System.Windows.Forms.TextBox();
@@ -43,8 +45,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_ok = new System.Windows.Forms.Button();
-            this.button_huy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.msds)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,9 +81,37 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 60);
             this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // button_ok
+            // 
+            this.button_ok.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button_ok.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ok.Location = new System.Drawing.Point(104, 4);
+            this.button_ok.Margin = new System.Windows.Forms.Padding(4);
+            this.button_ok.Name = "button_ok";
+            this.button_ok.Size = new System.Drawing.Size(196, 52);
+            this.button_ok.TabIndex = 2;
+            this.button_ok.Text = "OK";
+            this.button_ok.UseVisualStyleBackColor = false;
+            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
+            // 
+            // button_huy
+            // 
+            this.button_huy.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_huy.Location = new System.Drawing.Point(490, 4);
+            this.button_huy.Margin = new System.Windows.Forms.Padding(4);
+            this.button_huy.Name = "button_huy";
+            this.button_huy.Size = new System.Drawing.Size(196, 52);
+            this.button_huy.TabIndex = 3;
+            this.button_huy.Text = "Hủy";
+            this.button_huy.UseVisualStyleBackColor = false;
+            this.button_huy.Click += new System.EventHandler(this.button_huy_Click);
             // 
             // label2
             // 
@@ -245,34 +273,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // button_ok
-            // 
-            this.button_ok.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button_ok.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ok.Location = new System.Drawing.Point(104, 4);
-            this.button_ok.Margin = new System.Windows.Forms.Padding(4);
-            this.button_ok.Name = "button_ok";
-            this.button_ok.Size = new System.Drawing.Size(196, 52);
-            this.button_ok.TabIndex = 2;
-            this.button_ok.Text = "OK";
-            this.button_ok.UseVisualStyleBackColor = false;
-            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
-            // 
-            // button_huy
-            // 
-            this.button_huy.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button_huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_huy.Location = new System.Drawing.Point(490, 4);
-            this.button_huy.Margin = new System.Windows.Forms.Padding(4);
-            this.button_huy.Name = "button_huy";
-            this.button_huy.Size = new System.Drawing.Size(196, 52);
-            this.button_huy.TabIndex = 3;
-            this.button_huy.Text = "Hủy";
-            this.button_huy.UseVisualStyleBackColor = false;
-            this.button_huy.Click += new System.EventHandler(this.button_huy_Click);
-            // 
             // fr_ChonTranDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -281,7 +281,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "fr_ChonTranDau";
-            this.Text = "fr_ChonTranDau";
+            this.Text = "Chọn trận đấu";
             ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

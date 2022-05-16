@@ -383,7 +383,7 @@
             this.ClientSize = new System.Drawing.Size(1097, 518);
             this.Controls.Add(this.panel1);
             this.Name = "fr_LichThidau";
-            this.Text = "fr_LichThidau";
+            this.Text = "Lịch thi đấu";
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
             this.panel7.ResumeLayout(false);

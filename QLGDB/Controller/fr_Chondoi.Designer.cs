@@ -268,7 +268,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "fr_Chondoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fr_Chondoi";
+            this.Text = "Chọn đội";
             ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

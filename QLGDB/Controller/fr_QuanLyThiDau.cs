@@ -41,5 +41,10 @@ namespace QLGDB.Controller
         {
             OpenChildForm(new fr_TySo());
         }
+
+        private void chungKếToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new fr_ChungKet());
+        }
     }
 }

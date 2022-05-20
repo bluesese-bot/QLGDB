@@ -48,7 +48,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.msds = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.button_sua = new System.Windows.Forms.Button();
             this.button_them = new System.Windows.Forms.Button();
@@ -56,6 +55,7 @@
             this.button_xoa = new System.Windows.Forms.Button();
             this.button_huy = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.msds = new ADGV.AdvancedDataGridView();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,9 +63,9 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.msds)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.msds)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_tendoi
@@ -311,20 +311,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1191, 627);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // msds
-            // 
-            this.msds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.msds.BackgroundColor = System.Drawing.Color.White;
-            this.msds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msds.Location = new System.Drawing.Point(4, 311);
-            this.msds.Margin = new System.Windows.Forms.Padding(4);
-            this.msds.Name = "msds";
-            this.msds.RowHeadersWidth = 51;
-            this.msds.Size = new System.Drawing.Size(1183, 312);
-            this.msds.TabIndex = 4;
-            this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
@@ -437,6 +423,22 @@
             this.panel1.Size = new System.Drawing.Size(1191, 627);
             this.panel1.TabIndex = 3;
             // 
+            // msds
+            // 
+            this.msds.AutoGenerateContextFilters = true;
+            this.msds.BackgroundColor = System.Drawing.Color.White;
+            this.msds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.msds.DateWithTime = false;
+            this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msds.Location = new System.Drawing.Point(3, 310);
+            this.msds.Name = "msds";
+            this.msds.RowHeadersWidth = 51;
+            this.msds.RowTemplate.Height = 24;
+            this.msds.Size = new System.Drawing.Size(1185, 314);
+            this.msds.TabIndex = 6;
+            this.msds.TimeFilter = false;
+            this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
+            // 
             // fr_Themcauthu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -456,9 +458,9 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,7 +485,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView msds;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button button_sua;
         private System.Windows.Forms.Button button_them;
@@ -491,5 +492,6 @@
         private System.Windows.Forms.Button button_xoa;
         private System.Windows.Forms.Button button_huy;
         private System.Windows.Forms.TextBox txt_madoi;
+        private ADGV.AdvancedDataGridView msds;
     }
 }

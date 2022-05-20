@@ -10,5 +10,7 @@ namespace QLGDB.Model
         public DateTime? ThoiThiDau { get; set; }
         public int? SBTDOI1 { get; set; }
         public int? SBTDOI2 { get; set; }
+        public int? TranDau { get; set; }
+        public int? IdDoiWin { get; set; }
     }
 }

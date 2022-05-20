@@ -28,6 +28,8 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,6 +57,9 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedDataGridView">
+      <HintPath>..\packages\ADGV.0.1.0.10\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
@@ -67,6 +72,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -92,6 +98,12 @@
     </Compile>
     <Compile Include="Controller\fr_ChonTranDau.Designer.cs">
       <DependentUpon>fr_ChonTranDau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\fr_ChungKet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\fr_ChungKet.Designer.cs">
+      <DependentUpon>fr_ChungKet.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller\fr_Dangkydoi.cs">
       <SubType>Form</SubType>
@@ -153,13 +165,33 @@
     <Compile Include="Controller\fr_TySo.Designer.cs">
       <DependentUpon>fr_TySo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Entity\CauThu.cs" />
-    <Compile Include="Model\Entity\DataModel.cs" />
-    <Compile Include="Model\Entity\DoiBong.cs" />
-    <Compile Include="Model\Entity\DoiBongCauThu.cs" />
-    <Compile Include="Model\Entity\GiaiDau.cs" />
-    <Compile Include="Model\Entity\KetQua.cs" />
-    <Compile Include="Model\Entity\sysdiagram.cs" />
+    <Compile Include="Model\CauThu.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DoiBong.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DoiBongCauThu.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GiaiDau.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\GiaiDau\GiaiDauAddModel.cs" />
     <Compile Include="Model\GiaiDau\GiaiDauQueryModel.cs" />
     <Compile Include="Model\GiaiDau\GiaiDauUpdateModel.cs" />
@@ -176,7 +208,9 @@
     <Compile Include="Model\CauThu\CauThuAddModel.cs" />
     <Compile Include="Model\CauThu\CauThuQueryModel.cs" />
     <Compile Include="Model\CauThu\CauThuUpdateModel.cs" />
-    <Compile Include="Model\Entity\LichThiDau.cs" />
+    <Compile Include="Model\LichThiDau.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\LichThiDau\LichThiDauAddModel.cs" />
     <Compile Include="Model\LichThiDau\LichThiDauQueryModel.cs" />
     <Compile Include="Model\LichThiDau\LichThiDauUpdateModel.cs" />
@@ -208,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\fr_ChonTranDau.resx">
       <DependentUpon>fr_ChonTranDau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\fr_ChungKet.resx">
+      <DependentUpon>fr_ChungKet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\fr_Dangkydoi.resx">
       <DependentUpon>fr_Dangkydoi.cs</DependentUpon>
@@ -244,6 +281,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\DataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\DataModel.edmx.diagram">
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -260,6 +304,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\100522.sql" />
+    <Content Include="Model\DataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\DataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -272,6 +326,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

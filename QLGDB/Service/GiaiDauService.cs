@@ -10,7 +10,7 @@ namespace QLGDB.Service
     /// </summary>
     public class GiaiDauService
     {
-        private readonly DataModel _contextService = new DataModel();
+        private readonly DBcontext _contextService = new DBcontext();
         public List<GiaiDauViewModel> Query(GiaiDauQueryModel payload)
         {
             IQueryable<GiaiDau> query = _contextService.GiaiDaus;

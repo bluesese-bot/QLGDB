@@ -32,6 +32,7 @@
             this.lịchThiĐấuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tỷSốToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.chungKếToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lịchThiĐấuToolStripMenuItem,
-            this.tỷSốToolStripMenuItem});
+            this.tỷSốToolStripMenuItem,
+            this.chungKếToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1050, 31);
@@ -72,6 +74,13 @@
             this.pnMain.Size = new System.Drawing.Size(1050, 464);
             this.pnMain.TabIndex = 1;
             // 
+            // chungKếToolStripMenuItem
+            // 
+            this.chungKếToolStripMenuItem.Name = "chungKếToolStripMenuItem";
+            this.chungKếToolStripMenuItem.Size = new System.Drawing.Size(108, 27);
+            this.chungKếToolStripMenuItem.Text = "Chung Kết";
+            this.chungKếToolStripMenuItem.Click += new System.EventHandler(this.chungKếToolStripMenuItem_Click);
+            // 
             // fr_QuanLyThiDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -95,5 +104,6 @@
         private System.Windows.Forms.ToolStripMenuItem lịchThiĐấuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tỷSốToolStripMenuItem;
         private System.Windows.Forms.Panel pnMain;
+        private System.Windows.Forms.ToolStripMenuItem chungKếToolStripMenuItem;
     }
 }

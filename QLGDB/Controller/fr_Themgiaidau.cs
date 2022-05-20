@@ -185,5 +185,10 @@ namespace QLGDB.Controller
             LockText();
             SetNull();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

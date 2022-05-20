@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.msds = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button_ok = new System.Windows.Forms.Button();
             this.button_huy = new System.Windows.Forms.Button();
@@ -45,27 +44,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.msds)).BeginInit();
+            this.msds = new ADGV.AdvancedDataGridView();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.msds)).BeginInit();
             this.SuspendLayout();
-            // 
-            // msds
-            // 
-            this.msds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.msds.BackgroundColor = System.Drawing.Color.White;
-            this.msds.ColumnHeadersHeight = 29;
-            this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msds.Location = new System.Drawing.Point(4, 161);
-            this.msds.Margin = new System.Windows.Forms.Padding(4);
-            this.msds.Name = "msds";
-            this.msds.ReadOnly = true;
-            this.msds.RowHeadersWidth = 51;
-            this.msds.Size = new System.Drawing.Size(792, 217);
-            this.msds.TabIndex = 0;
-            this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
             // 
             // tableLayoutPanel3
             // 
@@ -251,6 +236,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(792, 149);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
@@ -259,8 +245,8 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.msds, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.msds, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -273,6 +259,22 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // msds
+            // 
+            this.msds.AutoGenerateContextFilters = true;
+            this.msds.BackgroundColor = System.Drawing.Color.White;
+            this.msds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.msds.DateWithTime = false;
+            this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msds.Location = new System.Drawing.Point(3, 160);
+            this.msds.Name = "msds";
+            this.msds.RowHeadersWidth = 51;
+            this.msds.RowTemplate.Height = 24;
+            this.msds.Size = new System.Drawing.Size(794, 219);
+            this.msds.TabIndex = 5;
+            this.msds.TimeFilter = false;
+            this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
+            // 
             // fr_ChonTranDau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,19 +284,18 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "fr_ChonTranDau";
             this.Text = "Chọn trận đấu";
-            ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView msds;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -311,5 +312,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button_ok;
         private System.Windows.Forms.Button button_huy;
+        private ADGV.AdvancedDataGridView msds;
     }
 }

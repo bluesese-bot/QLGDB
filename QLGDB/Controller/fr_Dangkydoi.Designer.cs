@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fr_Dangkydoi));
             this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.msds = new System.Windows.Forms.DataGridView();
+            this.msds = new ADGV.AdvancedDataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -90,19 +90,18 @@
             // 
             // msds
             // 
-            this.msds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.msds.AutoGenerateContextFilters = true;
             this.msds.BackgroundColor = System.Drawing.Color.White;
             this.msds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.msds.DateWithTime = false;
             this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msds.Location = new System.Drawing.Point(4, 267);
-            this.msds.Margin = new System.Windows.Forms.Padding(4);
-            this.msds.MultiSelect = false;
+            this.msds.Location = new System.Drawing.Point(3, 266);
             this.msds.Name = "msds";
-            this.msds.ReadOnly = true;
             this.msds.RowHeadersWidth = 51;
-            this.msds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.msds.Size = new System.Drawing.Size(1175, 256);
-            this.msds.TabIndex = 0;
+            this.msds.RowTemplate.Height = 24;
+            this.msds.Size = new System.Drawing.Size(1177, 258);
+            this.msds.TabIndex = 3;
+            this.msds.TimeFilter = false;
             this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
             // 
             // groupBox1
@@ -299,7 +298,7 @@
             // 
             this.cbGiai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbGiai.FormattingEnabled = true;
-            this.cbGiai.Location = new System.Drawing.Point(969, 43);
+            this.cbGiai.Location = new System.Drawing.Point(969, 45);
             this.cbGiai.Margin = new System.Windows.Forms.Padding(4);
             this.cbGiai.Name = "cbGiai";
             this.cbGiai.Size = new System.Drawing.Size(186, 28);
@@ -404,8 +403,8 @@
         private System.Windows.Forms.Button button_them;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txt_madoi;
-        private System.Windows.Forms.DataGridView msds;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
+        private ADGV.AdvancedDataGridView msds;
     }
 }

@@ -76,9 +76,10 @@ namespace QLGDB.Controller
                 });
                 msds.Columns[0].Visible = false;
                 msds.Columns[1].HeaderText = "Tên Giải";
-                msds.Columns[2].HeaderText = "Tên Đội 1";
-                msds.Columns[3].HeaderText = "Tên Đội 2";
-                msds.Columns[4].HeaderText = "Thời Gian Thi Đấu";
+                msds.Columns[2].HeaderText = "Số Trận";
+                msds.Columns[3].HeaderText = "Tên Đội 1";
+                msds.Columns[4].HeaderText = "Tên Đội 2";
+                msds.Columns[5].HeaderText = "Thời Gian Thi Đấu";
             }
             catch (Exception ex)
             {
@@ -102,6 +103,7 @@ namespace QLGDB.Controller
             txt_doi1.Enabled = false;
             txt_doi2.Enabled = false;
             tm_Thoigian.Enabled = false;
+            txt_sotran.Enabled = false;
 
             button_them.Enabled = true;
             button_sua.Enabled = true;
@@ -115,6 +117,7 @@ namespace QLGDB.Controller
             txt_doi1.Enabled = true;
             txt_doi2.Enabled = true;
             tm_Thoigian.Enabled = true;
+            txt_sotran.Enabled = true;
 
             button_them.Enabled = false;
             button_sua.Enabled = false;
@@ -178,6 +181,7 @@ namespace QLGDB.Controller
                             IdDoi1 = Convert.ToInt32(txt_doi1.SelectedValue),
                             IdDoi2 = Convert.ToInt32(txt_doi2.SelectedValue),
                             ThoiThiDau = tm_Thoigian.Value,
+                            TranDau = Convert.ToInt32(txt_sotran.Text),
                             SBTDOI1 = -1,
                             SBTDOI2 = -1
                         });
@@ -195,6 +199,7 @@ namespace QLGDB.Controller
                             IdDoi1 = Convert.ToInt32(txt_doi1.SelectedValue),
                             IdDoi2 = Convert.ToInt32(txt_doi2.SelectedValue),
                             ThoiThiDau = tm_Thoigian.Value,
+                            TranDau = Convert.ToInt32(txt_sotran.Text),
                             SBTDOI1 = -1,
                             SBTDOI2 = -1
                         });
@@ -230,11 +235,12 @@ namespace QLGDB.Controller
         private void msds_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int dong = e.RowIndex < 0 ? 0 : e.RowIndex;
-            txt_matrandau.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[0].Value.ToString();
-            txt_muagiai.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[1].Value.ToString();
-            txt_doi1.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[2].Value.ToString();
-            txt_doi2.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[3].Value.ToString();
-            tm_Thoigian.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[4].Value.ToString();
+            txt_matrandau.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[0].Value.ToString() == null ? null : msds.Rows[dong].Cells[0].Value.ToString();
+            txt_muagiai.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[1].Value.ToString() == null ? null: msds.Rows[dong].Cells[1].Value.ToString();
+            txt_sotran.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[2].Value.ToString() == null ? null : msds.Rows[dong].Cells[2].Value.ToString();
+            txt_doi1.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[3].Value.ToString() == null ? null : msds.Rows[dong].Cells[3].Value.ToString();
+            txt_doi2.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[4].Value.ToString() == null ? null : msds.Rows[dong].Cells[4].Value.ToString();
+            tm_Thoigian.Text = e.RowIndex < 0 ? null : msds.Rows[dong].Cells[5].Value.ToString() == null ? null : msds.Rows[dong].Cells[5].Value.ToString();
         }
     }
 }

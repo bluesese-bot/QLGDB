@@ -44,6 +44,8 @@ namespace QLGDB.Controller
                 msds.Columns[4].HeaderText = "Thời Gian Thi Đấu";
                 msds.Columns[5].HeaderText = "Số Bàn Thắng Đội 1";
                 msds.Columns[6].HeaderText = "Số Bàn Thắng Đội 2";
+                msds.Columns[7].HeaderText = "Trận Đấu";
+                msds.Columns[8].HeaderText = "Đội Win";
             }
             catch (Exception ex)
             {
@@ -139,7 +141,7 @@ namespace QLGDB.Controller
                         {
                             Id = Convert.ToInt32(txt_matrandau.Text),
                             SBTDOI1 = Convert.ToInt32(txt_banthangdoi1.Text),
-                            SBTDOI2 = Convert.ToInt32(txt_banthangdoi2.Text)
+                            SBTDOI2 = Convert.ToInt32(txt_banthangdoi2.Text),
                         });
                         if (res == false)
                         {

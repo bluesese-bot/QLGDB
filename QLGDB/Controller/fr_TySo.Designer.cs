@@ -42,7 +42,6 @@
             this.txt_banthangdoi2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.msds = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,14 +49,15 @@
             this.txt_matrandau = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_banthangdoi1 = new System.Windows.Forms.TextBox();
+            this.msds = new ADGV.AdvancedDataGridView();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.msds)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.msds)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel3
@@ -232,8 +232,8 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.msds, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.msds, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -244,23 +244,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 473);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // msds
-            // 
-            this.msds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.msds.BackgroundColor = System.Drawing.Color.White;
-            this.msds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msds.Location = new System.Drawing.Point(4, 240);
-            this.msds.Margin = new System.Windows.Forms.Padding(4);
-            this.msds.MultiSelect = false;
-            this.msds.Name = "msds";
-            this.msds.ReadOnly = true;
-            this.msds.RowHeadersWidth = 51;
-            this.msds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.msds.Size = new System.Drawing.Size(976, 229);
-            this.msds.TabIndex = 11;
-            this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
             // 
             // tableLayoutPanel2
             // 
@@ -374,6 +357,22 @@
             this.txt_banthangdoi1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_banthangdoi1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_banthangdoi1_KeyPress);
             // 
+            // msds
+            // 
+            this.msds.AutoGenerateContextFilters = true;
+            this.msds.BackgroundColor = System.Drawing.Color.White;
+            this.msds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.msds.DateWithTime = false;
+            this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msds.Location = new System.Drawing.Point(3, 239);
+            this.msds.Name = "msds";
+            this.msds.RowHeadersWidth = 51;
+            this.msds.RowTemplate.Height = 24;
+            this.msds.Size = new System.Drawing.Size(978, 231);
+            this.msds.TabIndex = 21;
+            this.msds.TimeFilter = false;
+            this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
+            // 
             // fr_TySo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -387,7 +386,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
@@ -395,6 +393,7 @@
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.msds)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -420,6 +419,6 @@
         private System.Windows.Forms.Button button_huy;
         private System.Windows.Forms.Button button_them;
         private System.Windows.Forms.TextBox txt_matrandau;
-        private System.Windows.Forms.DataGridView msds;
+        private ADGV.AdvancedDataGridView msds;
     }
 }

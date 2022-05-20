@@ -10,7 +10,7 @@ namespace QLGDB.Service
     /// </summary>
     public class CauThuService
     {
-        private readonly DataModel _contextService = new DataModel();
+        private readonly DBcontext _contextService = new DBcontext();
         public List<CauThuViewModel> Query(CauThuQueryModel payload)
         {
             IQueryable<CauThu> query = _contextService.CauThus;

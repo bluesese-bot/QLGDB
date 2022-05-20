@@ -11,7 +11,7 @@ namespace QLGDB.Service
     /// </summary>
     public class DoiBongService
     {
-        private readonly DataModel _contextService = new DataModel();
+        private readonly DBcontext _contextService = new DBcontext();
         public List<DoiBongViewModel> Query(DoiBongQueryModel payload)
         {
             IQueryable<DoiBong> query = _contextService.DoiBongs;
@@ -72,6 +72,14 @@ namespace QLGDB.Service
             DoiBong.IdGiaiDau = payload.IdGiaiDau;
             _contextService.SaveChanges();
             return true;
+        }
+        public DoiBongViewModel getDoiBong(int IdGiai,int Trandau)
+        {
+            var DoiBong = _contextService.DoiBongs.Where(x => x.Id == (_contextService.LichThiDaus.Where(y => y.IdGiai == IdGiai && y.TranDau == Trandau).Select(y => y.IdDoiWin).FirstOrDefault())).FirstOrDefault();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<DoiBong, DoiBongViewModel>());
+            var mapper = new Mapper(config);
+            var res = mapper.Map<DoiBong, DoiBongViewModel>(DoiBong);
+            return res;
         }
     }
 }

@@ -47,7 +47,7 @@
             this.button_sua = new System.Windows.Forms.Button();
             this.button_huy = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.msds = new System.Windows.Forms.DataGridView();
+            this.msds = new ADGV.AdvancedDataGridView();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -189,9 +189,9 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.msds, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.msds, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -203,6 +203,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1194, 596);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel4
             // 
@@ -317,19 +318,18 @@
             // 
             // msds
             // 
-            this.msds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.msds.AutoGenerateContextFilters = true;
             this.msds.BackgroundColor = System.Drawing.Color.White;
             this.msds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.msds.DateWithTime = false;
             this.msds.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msds.Location = new System.Drawing.Point(4, 223);
-            this.msds.Margin = new System.Windows.Forms.Padding(4);
-            this.msds.MultiSelect = false;
+            this.msds.Location = new System.Drawing.Point(3, 222);
             this.msds.Name = "msds";
-            this.msds.ReadOnly = true;
             this.msds.RowHeadersWidth = 51;
-            this.msds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.msds.Size = new System.Drawing.Size(1186, 369);
+            this.msds.RowTemplate.Height = 24;
+            this.msds.Size = new System.Drawing.Size(1188, 371);
             this.msds.TabIndex = 2;
+            this.msds.TimeFilter = false;
             this.msds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msds_CellClick);
             // 
             // fr_Themgiaidau
@@ -375,6 +375,6 @@
         private System.Windows.Forms.Button button_xoa;
         private System.Windows.Forms.Button button_sua;
         private System.Windows.Forms.Button button_huy;
-        private System.Windows.Forms.DataGridView msds;
+        private ADGV.AdvancedDataGridView msds;
     }
 }

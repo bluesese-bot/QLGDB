@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QLGDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CauThu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Msv" Type="nvarchar" MaxLength="50" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenLop" Type="nvarchar" MaxLength="50" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DoiBong">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenDoi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tenkhoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdGiaiDau" Type="int" />
+        </EntityType>
+        <EntityType Name="DoiBongCauThu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdDoi" Type="int" />
+          <Property Name="IdCauThu" Type="int" />
+        </EntityType>
+        <EntityType Name="GiaiDau">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenGiaiDau" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThoiGianBatDau" Type="datetime" />
+          <Property Name="ThoiGianKetThuc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LichThiDau">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdGiai" Type="int" />
+          <Property Name="IdDoi1" Type="int" />
+          <Property Name="IdDoi2" Type="int" />
+          <Property Name="ThoiThiDau" Type="datetime" />
+          <Property Name="SBTDOI1" Type="int" />
+          <Property Name="SBTDOI2" Type="int" />
+          <Property Name="TranDau" Type="int" />
+          <Property Name="IdDoiWin" Type="int" />
+        </EntityType>
+        <Association Name="FK_dbo_DoiBongCauThu_dbo_CauThu_IdCauThu">
+          <End Role="CauThu" Type="Self.CauThu" Multiplicity="0..1" />
+          <End Role="DoiBongCauThu" Type="Self.DoiBongCauThu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CauThu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DoiBongCauThu">
+              <PropertyRef Name="IdCauThu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DoiBongCauThu_dbo_DoiBong_IdDoi">
+          <End Role="DoiBong" Type="Self.DoiBong" Multiplicity="0..1" />
+          <End Role="DoiBongCauThu" Type="Self.DoiBongCauThu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoiBong">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DoiBongCauThu">
+              <PropertyRef Name="IdDoi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LichThiDau_dbo_DoiBong_IdDoi1">
+          <End Role="DoiBong" Type="Self.DoiBong" Multiplicity="0..1" />
+          <End Role="LichThiDau" Type="Self.LichThiDau" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoiBong">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LichThiDau">
+              <PropertyRef Name="IdDoi1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LichThiDau_dbo_DoiBong_IdDoi2">
+          <End Role="DoiBong" Type="Self.DoiBong" Multiplicity="0..1" />
+          <End Role="LichThiDau" Type="Self.LichThiDau" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoiBong">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LichThiDau">
+              <PropertyRef Name="IdDoi2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LichThiDau_dbo_GiaiDau_IdGiai">
+          <End Role="GiaiDau" Type="Self.GiaiDau" Multiplicity="0..1" />
+          <End Role="LichThiDau" Type="Self.LichThiDau" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiaiDau">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LichThiDau">
+              <PropertyRef Name="IdGiai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLGDBModelStoreContainer">
+          <EntitySet Name="CauThu" EntityType="Self.CauThu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DoiBong" EntityType="Self.DoiBong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DoiBongCauThu" EntityType="Self.DoiBongCauThu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GiaiDau" EntityType="Self.GiaiDau" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LichThiDau" EntityType="Self.LichThiDau" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_DoiBongCauThu_dbo_CauThu_IdCauThu" Association="Self.FK_dbo_DoiBongCauThu_dbo_CauThu_IdCauThu">
+            <End Role="CauThu" EntitySet="CauThu" />
+            <End Role="DoiBongCauThu" EntitySet="DoiBongCauThu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DoiBongCauThu_dbo_DoiBong_IdDoi" Association="Self.FK_dbo_DoiBongCauThu_dbo_DoiBong_IdDoi">
+            <End Role="DoiBong" EntitySet="DoiBong" />
+            <End Role="DoiBongCauThu" EntitySet="DoiBongCauThu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LichThiDau_dbo_DoiBong_IdDoi1" Association="Self.FK_dbo_LichThiDau_dbo_DoiBong_IdDoi1">
+            <End Role="DoiBong" EntitySet="DoiBong" />
+            <End Role="LichThiDau" EntitySet="LichThiDau" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LichThiDau_dbo_DoiBong_IdDoi2" Association="Self.FK_dbo_LichThiDau_dbo_DoiBong_IdDoi2">
+            <End Role="DoiBong" EntitySet="DoiBong" />
+            <End Role="LichThiDau" EntitySet="LichThiDau" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LichThiDau_dbo_GiaiDau_IdGiai" Association="Self.FK_dbo_LichThiDau_dbo_GiaiDau_IdGiai">
+            <End Role="GiaiDau" EntitySet="GiaiDau" />
+            <End Role="LichThiDau" EntitySet="LichThiDau" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLGDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CauThu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Msv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DoiBongCauThus" Relationship="Self.FK_dbo_DoiBongCauThu_dbo_CauThu_IdCauThu" FromRole="CauThu" ToRole="DoiBongCauThu" />
+        </EntityType>
+        <EntityType Name="DoiBong">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenDoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tenkhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdGiaiDau" Type="Int32" />
+          <NavigationProperty Name="DoiBongCauThus" Relationship="Self.FK_dbo_DoiBongCauThu_dbo_DoiBong_IdDoi" FromRole="DoiBong" ToRole="DoiBongCauThu" />
+          <NavigationProperty Name="LichThiDaus" Relationship="Self.FK_dbo_LichThiDau_dbo_DoiBong_IdDoi1" FromRole="DoiBong" ToRole="LichThiDau" />
+          <NavigationProperty Name="LichThiDaus1" Relationship="Self.FK_dbo_LichThiDau_dbo_DoiBong_IdDoi2" FromRole="DoiBong" ToRole="LichThiDau" />
+        </EntityType>
+        <EntityType Name="DoiBongCauThu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdDoi" Type="Int32" />
+          <Property Name="IdCauThu" Type="Int32" />
+          <NavigationProperty Name="CauThu" Relationship="Self.FK_dbo_DoiBongCauThu_dbo_CauThu_IdCauThu" FromRole="DoiBongCauThu" ToRole="CauThu" />
+          <NavigationProperty Name="DoiBong" Relationship="Self.FK_dbo_DoiBongCauThu_dbo_DoiBong_IdDoi" FromRole="DoiBongCauThu" ToRole="DoiBong" />
+        </EntityType>
+        <EntityType Name="GiaiDau">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenGiaiDau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianBatDau" Type="DateTime" Precision="3" />
+          <Property Name="ThoiGianKetThuc" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="LichThiDaus" Relationship="Self.FK_dbo_LichThiDau_dbo_GiaiDau_IdGiai" FromRole="GiaiDau" ToRole="LichThiDau" />
+        </EntityType>
+        <EntityType Name="LichThiDau">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdGiai" Type="Int32" />
+          <Property Name="IdDoi1" Type="Int32" />
+          <Property Name="IdDoi2" Type="Int32" />
+          <Property Name="ThoiThiDau" Type="DateTime" Precision="3" />
+          <Property Name="SBTDOI1" Type="Int32" />
+          <Property Name="SBTDOI2" Type="Int32" />
+          <Property Name="TranDau" Type="Int32" />
+          <Property Name="IdDoiWin" Type="Int32" />
+          <NavigationProperty Name="DoiBong" Relationship="Self.FK_dbo_LichThiDau_dbo_DoiBong_IdDoi1" FromRole="LichThiDau" ToRole="DoiBong" />
+          <NavigationProperty Name="DoiBong1" Relationship="Self.FK_dbo_LichThiDau_dbo_DoiBong_IdDoi2" FromRole="LichThiDau" ToRole="DoiBong" />
+          <NavigationProperty Name="GiaiDau" Relationship="Self.FK_dbo_LichThiDau_dbo_GiaiDau_IdGiai" FromRole="LichThiDau" ToRole="GiaiDau" />
+        </EntityType>
+        <Association Name="FK_dbo_DoiBongCauThu_dbo_CauThu_IdCauThu">
+          <End Role="CauThu" Type="Self.CauThu" Multiplicity="0..1" />
+          <End Role="DoiBongCauThu" Type="Self.DoiBongCauThu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CauThu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DoiBongCauThu">
+              <PropertyRef Name="IdCauThu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_DoiBongCauThu_dbo_DoiBong_IdDoi">
+          <End Role="DoiBong" Type="Self.DoiBong" Multiplicity="0..1" />
+          <End Role="DoiBongCauThu" Type="Self.DoiBongCauThu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoiBong">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DoiBongCauThu">
+              <PropertyRef Name="IdDoi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LichThiDau_dbo_DoiBong_IdDoi1">
+          <End Role="DoiBong" Type="Self.DoiBong" Multiplicity="0..1" />
+          <End Role="LichThiDau" Type="Self.LichThiDau" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoiBong">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LichThiDau">
+              <PropertyRef Name="IdDoi1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LichThiDau_dbo_DoiBong_IdDoi2">
+          <End Role="DoiBong" Type="Self.DoiBong" Multiplicity="0..1" />
+          <End Role="LichThiDau" Type="Self.LichThiDau" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoiBong">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LichThiDau">
+              <PropertyRef Name="IdDoi2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LichThiDau_dbo_GiaiDau_IdGiai">
+          <End Role="GiaiDau" Type="Self.GiaiDau" Multiplicity="0..1" />
+          <End Role="LichThiDau" Type="Self.LichThiDau" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiaiDau">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LichThiDau">
+              <PropertyRef Name="IdGiai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBcontext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CauThus" EntityType="Self.CauThu" />
+          <EntitySet Name="DoiBongs" EntityType="Self.DoiBong" />
+          <EntitySet Name="DoiBongCauThus" EntityType="Self.DoiBongCauThu" />
+          <EntitySet Name="GiaiDaus" EntityType="Self.GiaiDau" />
+          <EntitySet Name="LichThiDaus" EntityType="Self.LichThiDau" />
+          <AssociationSet Name="FK_dbo_DoiBongCauThu_dbo_CauThu_IdCauThu" Association="Self.FK_dbo_DoiBongCauThu_dbo_CauThu_IdCauThu">
+            <End Role="CauThu" EntitySet="CauThus" />
+            <End Role="DoiBongCauThu" EntitySet="DoiBongCauThus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_DoiBongCauThu_dbo_DoiBong_IdDoi" Association="Self.FK_dbo_DoiBongCauThu_dbo_DoiBong_IdDoi">
+            <End Role="DoiBong" EntitySet="DoiBongs" />
+            <End Role="DoiBongCauThu" EntitySet="DoiBongCauThus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LichThiDau_dbo_DoiBong_IdDoi1" Association="Self.FK_dbo_LichThiDau_dbo_DoiBong_IdDoi1">
+            <End Role="DoiBong" EntitySet="DoiBongs" />
+            <End Role="LichThiDau" EntitySet="LichThiDaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LichThiDau_dbo_DoiBong_IdDoi2" Association="Self.FK_dbo_LichThiDau_dbo_DoiBong_IdDoi2">
+            <End Role="DoiBong" EntitySet="DoiBongs" />
+            <End Role="LichThiDau" EntitySet="LichThiDaus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LichThiDau_dbo_GiaiDau_IdGiai" Association="Self.FK_dbo_LichThiDau_dbo_GiaiDau_IdGiai">
+            <End Role="GiaiDau" EntitySet="GiaiDaus" />
+            <End Role="LichThiDau" EntitySet="LichThiDaus" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLGDBModelStoreContainer" CdmEntityContainer="DBcontext">
+          <EntitySetMapping Name="CauThus">
+            <EntityTypeMapping TypeName="QLGDBModel.CauThu">
+              <MappingFragment StoreEntitySet="CauThu">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Msv" ColumnName="Msv" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoiBongs">
+            <EntityTypeMapping TypeName="QLGDBModel.DoiBong">
+              <MappingFragment StoreEntitySet="DoiBong">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TenDoi" ColumnName="TenDoi" />
+                <ScalarProperty Name="Tenkhoa" ColumnName="Tenkhoa" />
+                <ScalarProperty Name="IdGiaiDau" ColumnName="IdGiaiDau" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoiBongCauThus">
+            <EntityTypeMapping TypeName="QLGDBModel.DoiBongCauThu">
+              <MappingFragment StoreEntitySet="DoiBongCauThu">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdDoi" ColumnName="IdDoi" />
+                <ScalarProperty Name="IdCauThu" ColumnName="IdCauThu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GiaiDaus">
+            <EntityTypeMapping TypeName="QLGDBModel.GiaiDau">
+              <MappingFragment StoreEntitySet="GiaiDau">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TenGiaiDau" ColumnName="TenGiaiDau" />
+                <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
+                <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LichThiDaus">
+            <EntityTypeMapping TypeName="QLGDBModel.LichThiDau">
+              <MappingFragment StoreEntitySet="LichThiDau">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdGiai" ColumnName="IdGiai" />
+                <ScalarProperty Name="IdDoi1" ColumnName="IdDoi1" />
+                <ScalarProperty Name="IdDoi2" ColumnName="IdDoi2" />
+                <ScalarProperty Name="ThoiThiDau" ColumnName="ThoiThiDau" />
+                <ScalarProperty Name="SBTDOI1" ColumnName="SBTDOI1" />
+                <ScalarProperty Name="SBTDOI2" ColumnName="SBTDOI2" />
+                <ScalarProperty Name="TranDau" ColumnName="TranDau" />
+                <ScalarProperty Name="IdDoiWin" ColumnName="IdDoiWin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

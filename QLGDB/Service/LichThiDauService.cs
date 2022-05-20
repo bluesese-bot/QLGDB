@@ -78,7 +78,7 @@ namespace QLGDB.Service
         }
         public bool Add(LichThiDauAddModel payload)
         {
-            var LichThiDau = _contextService.LichThiDaus.Where(x => x.IdGiai == payload.IdGiai && (x.IdDoi1 == payload.IdDoi1 || x.IdDoi2 == payload.IdDoi2 || x.IdDoi1 == payload.IdDoi2 || x.IdDoi2 == payload.IdDoi1)).FirstOrDefault();
+            var LichThiDau = _contextService.LichThiDaus.Where(x => x.IdGiai == payload.IdGiai && ((x.IdDoi1 == payload.IdDoi1 || x.IdDoi1 == payload.IdDoi2) && (x.IdDoi2 == payload.IdDoi2 || x.IdDoi2 == payload.IdDoi1))).FirstOrDefault();
             if (LichThiDau != null)
                 return false;
             var entity = new LichThiDau
@@ -88,13 +88,17 @@ namespace QLGDB.Service
                 IdDoi2 = payload.IdDoi2,
                 ThoiThiDau = payload.ThoiThiDau,
                 SBTDOI1 = payload.SBTDOI1,
-                SBTDOI2 = payload.SBTDOI2
+                SBTDOI2 = payload.SBTDOI2,
+                TranDau = payload.TranDau,
             };
             _contextService.LichThiDaus.Add(entity);
             _contextService.SaveChanges();
             return true;
         }
-
+        public int GetMaxSoTran(int idgiai)
+        {
+            return _contextService.LichThiDaus.Where(x => x.IdGiai == idgiai).Max(x=>x.TranDau).GetValueOrDefault();
+        }
         public bool Delete(int id)
         {
             var LichThiDau = _contextService.LichThiDaus.Where(x => x.Id == id).FirstOrDefault();
@@ -123,6 +127,7 @@ namespace QLGDB.Service
             LichThiDau.ThoiThiDau = payload.ThoiThiDau;
             LichThiDau.SBTDOI1 = payload.SBTDOI1;
             LichThiDau.SBTDOI2 = payload.SBTDOI2;
+            LichThiDau.TranDau = payload.TranDau;
             _contextService.SaveChanges();
             return true;
         }

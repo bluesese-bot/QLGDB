@@ -105,6 +105,7 @@ namespace QLGDB.Controller
         {
             _isAdd = true;
             UnlockText();
+            SetNull();
         }
 
         private void button_ok_Click(object sender, EventArgs e)

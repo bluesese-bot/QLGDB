@@ -58,6 +58,7 @@ namespace QLGDB.Controller
         {
             if (txt_muagiai.SelectedIndex >= 0)
             {
+                var idgiai = (int)txt_muagiai.SelectedValue;
                 FillDoi(txtDOI1, (int)txt_muagiai.SelectedValue, 1);
                 FillDoi(txtDOI2, (int)txt_muagiai.SelectedValue, 2);
             }
@@ -75,6 +76,7 @@ namespace QLGDB.Controller
                         IdDoi1 = Convert.ToInt32(txtDOI1.Tag),
                         IdDoi2 = Convert.ToInt32(txtDOI2.Tag),
                         ThoiThiDau = tm_Thoigian.Value,
+                        TranDau = _service.GetMaxSoTran(Convert.ToInt32(txt_muagiai.SelectedValue)) + 1,
                         SBTDOI1 = -1,
                         SBTDOI2 = -1
                     });

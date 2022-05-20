@@ -92,6 +92,7 @@ namespace QLGDB.Controller
         {
             _isAdd = true;
             UnlockText();
+            SetNull();
         }
 
         private void msds_CellClick(object sender, DataGridViewCellEventArgs e)

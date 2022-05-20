@@ -83,6 +83,7 @@ namespace QLGDB.Controller
         {
             _isAdd = true;
             UnlockText();
+            SetNull();
         }
 
         private void button_sua_Click(object sender, EventArgs e)

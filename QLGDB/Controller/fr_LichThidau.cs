@@ -96,6 +96,7 @@ namespace QLGDB.Controller
             txt_muagiai.SelectedIndex = -1;
             txt_matrandau.Text = null;
             tm_Thoigian.Value = DateTime.Now;
+            txt_sotran.Text = null;
         }
         protected void LockText()
         {
@@ -130,6 +131,7 @@ namespace QLGDB.Controller
         {
             _isAdd = true;
             UnlockText();
+            SetNull();
         }
 
         private void button_sua_Click(object sender, EventArgs e)
